@@ -11,8 +11,18 @@ export function GifsApp() {
     const handleTermClicked = (term: string) => {
         console.log({ term })
     };
-    const handleSearch = (query: string) => {
-        console.log(query)
+    const handleSearch = (query: string = '') => {
+        query = query.trim().toLowerCase();
+        if (query.length === 0) return;
+
+        if (previousTerms.includes(query)) return;
+
+        // const currentTerms = previousTerms.slice(0, 8);
+        // currentTerms.unshift(query);
+
+        // setPreviousTerms(currentTerms);
+
+        setPreviousTerms([query, ...previousTerms].splice(0, 8));
     };
 
     return (
