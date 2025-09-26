@@ -12,7 +12,6 @@ export interface GiphyGif {
     bitly_gif_url:              string;
     bitly_url:                  string;
     embed_url:                  string;
-    username:                   Username;
     source:                     string;
     title:                      string;
     rating:                     Rating;
@@ -21,7 +20,6 @@ export interface GiphyGif {
     source_post_url:            string;
     is_sticker:                 number;
     import_datetime:            Date;
-    trending_datetime:          Date | TrendingDatetimeEnum;
     images:                     Images;
     analytics_response_payload: string;
     analytics:                  Analytics;
@@ -64,36 +62,20 @@ export interface FixedHeight {
     hash?:     string;
 }
 
-export enum Rating {
-    G = "g",
-}
+export type Rating = 'G';
 
-export enum TrendingDatetimeEnum {
-    The00000000000000 = "0000-00-00 00:00:00",
-}
-
-export enum Type {
-    GIF = "gif",
-}
+export type Type = 'gif';
 
 export interface User {
     avatar_url:    string;
     banner_image:  string;
     banner_url:    string;
     profile_url:   string;
-    username:      Username;
     display_name:  string;
     description:   string;
     instagram_url: string;
     website_url:   string;
     is_verified:   boolean;
-}
-
-export enum Username {
-    Animelab = "animelab",
-    Empty = "",
-    Mannyjammy = "mannyjammy",
-    Netflixlat = "netflixlat",
 }
 
 export interface Meta {
